@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image_view_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="#673AB7" />
+
+    <TextView
+        android:id="@+id/text_view_hex_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#C1BFBF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/text_view_rgb_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:text="HEX # FF 673AB7" />
+
+    <TextView
+        android:id="@+id/text_view_rgb_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#C1BFBF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_hex_color"
+        tools:text="RGB 255 103 58 183" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <TextView
+        android:id="@+id/text_view_alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textStyle="bold"
+        android:text="A"
+        app:layout_constraintBottom_toTopOf="@id/text_view_red"
+        app:layout_constraintEnd_toStartOf="@id/seek_bar_alpha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal" />
+
+    <SeekBar
+        tools:progress="50"
+        android:thumbTint="#CCCACA"
+        android:progressTint="#CCCACA"
+        android:paddingVertical="15dp"
+        app:layout_constraintVertical_chainStyle="spread"
+        android:id="@+id/seek_bar_alpha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/seek_bar_red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_alpha"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal" />
+
+    <TextView
+        android:id="@+id/text_view_red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textStyle="bold"
+        android:text="R"
+        app:layout_constraintBottom_toTopOf="@id/text_view_green"
+        app:layout_constraintEnd_toStartOf="@id/seek_bar_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_alpha" />
+
+    <SeekBar
+        tools:progress="50"
+        android:thumbTint="#ED3333"
+        android:progressTint="#ED3333"
+        android:paddingVertical="15dp"
+        android:id="@+id/seek_bar_red"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/seek_bar_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_red"
+        app:layout_constraintTop_toBottomOf="@id/seek_bar_alpha" />
+
+    <TextView
+        android:id="@+id/text_view_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textStyle="bold"
+        android:text="G"
+        app:layout_constraintEnd_toStartOf="@id/seek_bar_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_red"
+        app:layout_constraintBottom_toTopOf="@id/text_view_blue"/>
+
+    <SeekBar
+        tools:progress="50"
+        android:thumbTint="#49E150"
+        android:progressTint="#49E150"
+        android:paddingVertical="15dp"
+        android:id="@+id/seek_bar_green"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/seek_bar_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_green"
+        app:layout_constraintTop_toBottomOf="@id/seek_bar_red" />
+
+    <TextView
+        android:id="@+id/text_view_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textStyle="bold"
+        android:text="B"
+        app:layout_constraintEnd_toStartOf="@id/seek_bar_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_green"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal1"/>
+
+    <SeekBar
+        tools:progress="50"
+        android:thumbTint="#03A9F4"
+        android:progressTint="#03A9F4"
+        android:paddingVertical="15dp"
+        android:id="@+id/seek_bar_blue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_red"
+        app:layout_constraintTop_toBottomOf="@id/seek_bar_green" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#f20"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal1"
+        app:layout_constraintEnd_toStartOf="@id/text_view_ok"
+        android:id="@+id/text_view_cancel"
+        android:textAllCaps="true"
+        android:text="Cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#f20"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/text_view_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineHorizontal1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/text_view_ok"
+        android:textAllCaps="true"
+        android:text="Ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
